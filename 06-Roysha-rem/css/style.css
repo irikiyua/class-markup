@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.intro {
+  width: 50%;
+  margin-left: 5%;
+  margin-top: 5%;
+  /*
+      この場合親要素を基準にしてそれの50%にしている。デフォで16pxなので8pxになるはず。
+  　　だけどグーグルクロームは10pxが最低になっている。確認は検証のcomputed
+      */
+  font-size: 100%;
+}
+.intro__catch {
+  color: #256BE6;
+  font-size: 2em;
+  /*
+  親要素のフォントサイズを基準にしてそれの何倍するかを決める
+  例えばフォントサイズが16px 2emだった場合 16×2で32になる
+  */
+  padding: 1em;
+  width: 10em;
+}
+.intro__content {
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+.btn {
+  display: block;
+  background-color: #256BE6;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em 0.8em;
+  font-size: 3rem;
+  width: 9em;
+}/*# sourceMappingURL=style.css.map */
