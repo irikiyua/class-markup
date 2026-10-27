@@ -1,7 +1,7 @@
 @use 'sass:math';
 
-$font-family-base: Arial,
-    Helvetica,
+$font-family-base: Helvetica,
+    Arial,
     sans-serif;
 
 $font-family-mincho: 'Times New Roman',
@@ -9,6 +9,228 @@ $font-family-mincho: 'Times New Roman',
     serif;
 
 $color-text: #9E9E9E;
-$color-bg: #292F39;
+$color-sub: #292F39;
 $color-main: #5EB6E1;
 $color-accent: #FF1D6A;
+
+@mixin inner($w: percentage(math.div(1200, 1488)), $mw: 1200px) {
+    width: $w;
+    max-width: $mw;
+    margin: 0 auto;
+}
+
+
+
+
+@mixin bg-color($c: #292F39) {
+    background-color: $c;
+    color: #fff;
+
+    .intro__title {
+        color: #fff;
+    }
+
+    .intro__text {
+        color: $color-text;
+    }
+}
+
+body {
+    font-size: 16px;
+    color: $color-text;
+    font-family: $font-family-base;
+    line-height: math.div(27, 16);
+    letter-spacing: math.div(20, 1000);
+}
+
+img {
+    height: auto;
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
+.btn {
+    display: block;
+    width: 200px;
+    border-radius: 10px;
+    background-color: $color-main;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    line-height: 0;
+    padding: 25px 0;
+    margin-top: 60px;
+}
+
+.panel {
+    position: relative;
+
+    &__label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        padding: 30px 0;
+        background-color: rgba(41, 47, 57, 0.75);
+        font-size: 24px;
+        line-height: math.div(31, 24);
+        color: #fff;
+    }
+}
+
+.card {
+    text-align: center;
+
+    &__image {
+        padding-bottom: 30px;
+    }
+
+    &__name {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: math.div(31, 24);
+        padding-bottom: 20px;
+    }
+
+    &__role {
+        font-weight: bold;
+        color: $color-accent;
+    }
+
+}
+
+.intro {
+
+    &__title {
+        font-size: 32px;
+        font-weight: bold;
+        line-height: math.div(42, 32);
+        font-family: $font-family-mincho;
+        color: $color-sub;
+        margin-bottom: 80px;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 120px;
+            border-bottom: 2px solid $color-main;
+            margin-top: 20px;
+        }
+    }
+
+    &--center {
+        text-align: center;
+
+        .intro__title {
+            &::after {
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+        }
+
+        .intro__text {
+            padding-bottom: 80px;
+        }
+    }
+
+}
+
+.header {
+    padding: 40px 0 100px;
+
+    &__inner {
+        @include inner();
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav {
+        display: flex;
+        column-gap: 30px;
+        color: #000;
+        font-weight: bold;
+    }
+}
+
+.footer {
+    padding: 60px 0;
+    background-color: $color-main;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copyright {
+        text-align: center;
+        color: #fff;
+    }
+
+
+}
+
+
+.welcome {
+    margin-bottom: 100px;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        column-gap: 80px;
+        align-items: center;
+    }
+
+
+}
+
+
+.team {
+    @include bg-color();
+    padding: 100px 0;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 30px;
+    }
+
+}
+
+// about
+
+
+.clasess {
+    padding-bottom: 100px;
+
+    &__inner {
+        @include inner()
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .btn {
+        background-color: $color-accent;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+.testimonials {
+    @include bg-color();
+    padding: 100px 0;
+
+    &__inner {
+        @include inner()
+    }
+}
