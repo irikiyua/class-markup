@@ -31,7 +31,7 @@ body img {
   margin: 0 auto;
 }
 .footer small {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #bbb;
 }
 
@@ -44,16 +44,16 @@ body img {
 /* modules
 ------------------------------ */
 .post__category {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #fa6980;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-style: oblique;
   text-transform: uppercase;
 }
 .post__title {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   color: #202124;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.2777777778;
 }
@@ -62,33 +62,33 @@ body img {
   background-color: #fff;
 }
 .card__body {
-  padding: 35px;
+  padding: 2.1875rem;
 }
 .card__title {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
   color: #202124;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.2777777778;
 }
 
 .time {
-  margin-top: 20px;
-  padding-left: 26px;
+  margin-top: 1.25rem;
+  padding-left: 1.625rem;
   color: #bbb;
-  font-size: 12px;
+  font-size: 0.75rem;
   background: url(../images/icon_time.png) no-repeat left center;
 }
 
 .btn {
   display: block;
-  width: 160px;
-  margin-top: 25px;
+  width: 16.6666666667em;
+  margin-top: 1.5625rem;
   margin-left: auto;
-  padding: 14px;
+  padding: 0.875rem;
   background-color: #fa6980;
   color: #fff;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
@@ -106,7 +106,7 @@ body img {
 /* index.html
 ------------------------------ */
 .news {
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 .news__inner {
   max-width: 800px;
@@ -115,22 +115,22 @@ body img {
 }
 .news__title {
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 1.2916666667;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  padding-left: 10px;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
   border-left: 10px solid #fa6980;
 }
 .news__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }
 
 .trending {
-  padding: 60px;
+  padding: 3.75rem;
   background-color: #f6f6f6;
 }
 .trending__inner {
@@ -140,24 +140,24 @@ body img {
 }
 .trending__title {
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 1.2916666667;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  padding-left: 10px;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
   border-left: 10px solid #fa6980;
 }
 .trending__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }
 
 /* about.html
 ------------------------------ */
 .blog {
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 .blog__inner {
   max-width: 800px;
@@ -166,22 +166,22 @@ body img {
 }
 .blog__title {
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 1.2916666667;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  padding-left: 10px;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
   border-left: 10px solid #fa6980;
 }
 .blog__list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }
 
 .discovery {
-  padding: 60px;
+  padding: 3.75rem;
   background-color: #f6f6f6;
 }
 .discovery__inner {
@@ -191,16 +191,16 @@ body img {
 }
 .discovery__title {
   color: #202124;
-  font-size: 24px;
+  font-size: clamp(1rem, 3vw, 1.5rem);
   line-height: 1.2916666667;
   font-weight: bold;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  padding-left: 10px;
+  margin-bottom: 1.875rem;
+  padding-left: 0.625rem;
   border-left: 10px solid #fa6980;
 }
 .discovery__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px 5%;
+  gap: 3.75rem 5%;
 }/*# sourceMappingURL=style.css.map */

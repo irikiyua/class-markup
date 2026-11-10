@@ -22,19 +22,42 @@ $font-family-base: Helvetica,
 
 @mixin title-main() {
     color: $color-main;
-    font-size: 24px;
+    font-size: clamp(rem(16), 3vw, rem(24));
     line-height: math.div(31, 24);
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 30px;
-    padding-left: 10px;
+    margin-bottom: rem(30);
+    padding-left: rem(10);
     border-left: 10px solid $color-accent;
 }
 
 @mixin grid($gt: repeat(2, 1fr)) {
     display: grid;
     grid-template-columns: $gt;
-    gap: 60px percentage(math.div(40, 800))
+    gap: rem(60) percentage(math.div(40, 800))
+}
+
+// 基準となるルートフォントサイズ（ブラウザ標準）
+$font-size-base: 16;
+
+// ① pxをremに変換する関数
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// ② pxをemに変換する関数
+@function em($font-size-self: 16, $px-value) {
+    @return #{math.div($px-value, $font-size-self)}em;
+}
+
+// ③ XD/Figmaのトラッキング値（文字間）をemに変換する関数
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+// ④ 親要素の幅に対する「%」を自動計算する関数
+@function pct($target-px, $parent-px) {
+    @return math.percentage(math.div($target-px, $parent-px));
 }
 
 body {
@@ -96,7 +119,7 @@ body {
     }
 
     small {
-        font-size: 12px;
+        font-size: rem(12);
         color: $color-label;
     }
 }
@@ -113,17 +136,17 @@ body {
 .post {
 
     &__category {
-        margin-bottom: 10px;
+        margin-bottom: rem(10);
         color: $color-accent;
-        font-size: 12px;
+        font-size: rem(12);
         font-style: oblique;
         text-transform: uppercase;
     }
 
     &__title {
-        margin-bottom: 15px;
+        margin-bottom: rem(15);
         color: $color-main;
-        font-size: 18px;
+        font-size: rem(18);
         font-weight: bold;
         line-height: math.div(23, 18);
     }
@@ -135,13 +158,13 @@ body {
     background-color: #fff;
 
     &__body {
-        padding: 35px;
+        padding: rem(35);
     }
 
     &__title {
-        margin-bottom: 15px;
+        margin-bottom: rem(15);
         color: $color-main;
-        font-size: 18px;
+        font-size: rem(18);
         font-weight: bold;
         line-height: math.div(23, 18);
     }
@@ -149,22 +172,22 @@ body {
 
 
 .time {
-    margin-top: 20px;
-    padding-left: 26px;
+    margin-top: rem(20);
+    padding-left: rem(26);
     color: $color-label;
-    font-size: 12px;
+    font-size: rem(12);
     background: url(../images/icon_time.png) no-repeat left center;
 }
 
 .btn {
     display: block;
-    width: 160px;
-    margin-top: 25px;
+    width: em(12, 200);
+    margin-top: rem(25);
     margin-left: auto;
-    padding: 14px;
+    padding: rem(14);
     background-color: $color-accent;
     color: #fff;
-    font-size: 12px;
+    font-size: rem(12);
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -186,7 +209,7 @@ body {
 ------------------------------ */
 
 .news {
-    margin-bottom: 60px;
+    margin-bottom: rem(60);
 
     &__inner {
         @include inner();
@@ -202,7 +225,7 @@ body {
 }
 
 .trending {
-    padding: 60px;
+    padding: rem(60);
     background-color: #f6f6f6;
 
     &__inner {
@@ -222,7 +245,7 @@ body {
 ------------------------------ */
 
 .blog {
-    margin-bottom: 60px;
+    margin-bottom: rem(60);
 
     &__inner {
         @include inner();
@@ -241,7 +264,7 @@ body {
 
 
 .discovery {
-    padding: 60px;
+    padding: rem(60);
     background-color: #f6f6f6;
 
     &__inner {

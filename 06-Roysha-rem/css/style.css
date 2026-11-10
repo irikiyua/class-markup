@@ -1,35 +1,77 @@
-@charset "UTF-8";
-.intro {
-  width: 50%;
-  margin-left: 5%;
-  margin-top: 5%;
-  /*
-      この場合親要素を基準にしてそれの50%にしている。デフォで16pxなので8pxになるはず。
-  　　だけどグーグルクロームは10pxが最低になっている。確認は検証のcomputed
-      */
-  font-size: 100%;
+body {
+  color: #6c6c6f;
+  font-size: calc(0.875 / 1px)rem;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
 }
+
 .intro__catch {
+  margin-bottom: 1.6666666667em;
+  font-size: calc(0.75 / 1px)rem;
   color: #256BE6;
-  font-size: 2em;
-  /*
-  親要素のフォントサイズを基準にしてそれの何倍するかを決める
-  例えばフォントサイズが16px 2emだった場合 16×2で32になる
-  */
-  padding: 1em;
-  width: 10em;
 }
-.intro__content {
-  font-size: 2rem;
-  margin: 1rem;
+.intro__title {
+  margin-bottom: calc(1.875 / 1px)rem;
+  color: #262934;
+  font-size: clamp(calc(1.5 / 1px)rem, 3vw, calc(2.25 / 1px)rem);
+  font-weight: bold;
+  line-height: 1.3333333333;
 }
 
 .btn {
   display: block;
-  background-color: #256BE6;
+  padding: 1.4285714286em;
   color: #fff;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.075em;
+  background-color: #256BE6;
   text-align: center;
-  padding: 0.5em 0.8em;
-  font-size: 3rem;
-  width: 9em;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.card__title {
+  color: #262934;
+  font-size: clamp(calc(1 / 1px)rem, 1.8vw, calc(1.375 / 1px)rem);
+  line-height: 1.2727272727;
+  font-weight: bold;
+}
+
+.header {
+  background-color: #256BE6;
+  width: 50vw;
+  height: 10vh;
+  height: 10dvh;
+}
+
+.mainvisual {
+  background-color: #ddd;
+  min-height: clamp(300px, 40vh, 600px);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+.mainvisual__inner {
+  text-align: center;
+}
+
+.gnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  place-items: center;
+  overflow-y: auto;
+  padding: 4rem 1.5rem;
+}
+.gnav__list {
+  display: grid;
+  gap: 1.5rem;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
