@@ -1,0 +1,277 @@
+@use "sass:math";
+@use "sass:map";
+
+// --- Variables ---
+
+// Colors
+$color-text: #000;
+$color-base: #ffffff;
+$color-main: #E40465;
+$color-bg: #F4F4F4;
+$color-footer: #2F2F2F;
+$color-table: #EDEFF2;
+
+
+// Typography
+$font-size-base: 16;
+$font-family-gothic: "Helvetica Neue", Arial, "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// Breakpoints
+$breakpoints: (
+    "sm": 640px,
+    // 大型スマホ〜小型タブレット
+    "md": 768px,
+    // 一般的なタブレット
+    "lg": 1024px,
+    // ノートPC・デスクトップ
+    "xl": 1280px,
+    // 大型ディスプレイ
+
+    "table":921px,
+);
+
+// --- Functions ---
+
+// pxをemに変換
+@function em($px-value, $font-size-self: 16) {
+    @return #{math.div($px-value, $font-size-self)}em;
+}
+
+
+// pxをremに変換
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XD/Figmaのトラッキング値をemに変換
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+// 親要素の幅に対する「%」を自動計算
+@function pct($target-px, $parent-px) {
+    @return math.percentage(math.div($target-px, $parent-px));
+}
+
+// --- Mixins ---
+
+// メディアクエリ（モバイルファースト）
+@mixin mq($breakpoint: md) {
+    $width: map.get($breakpoints, $breakpoint);
+
+    @media (width >=$width) {
+        @content;
+    }
+}
+
+// インナーコンテナ幅の指定
+@mixin inner($mw: 1000px, $w: 83%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin title() {
+    font-size: rem(32);
+    font-weight: bold;
+    line-height: 1.7;
+    position: relative;
+    margin-bottom: rem(88);
+    text-align: center;
+}
+
+@mixin after() {
+    content: "";
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 100px;
+    background-color: $color-main;
+
+}
+
+body {
+    color: $color-text;
+    font-family: $font-family-gothic;
+    font-size: rem(14);
+    line-height: 2.4;
+    letter-spacing: ls(50);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.card {
+    &__title {
+        font-size: rem(18);
+        font-weight: bold;
+        line-height: 1.7;
+        padding: rem(24) 0;
+    }
+}
+
+
+.header {
+    margin: rem(48) 0;
+
+    &__inner {
+        @include inner();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        color: $color-footer;
+        font-size: rem(24);
+        font-weight: bold;
+        line-height: 1.2;
+        letter-spacing: ls(100);
+    }
+
+    .gnav {
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: rem(30);
+        }
+
+        &--color {
+            color: $color-main;
+        }
+
+
+
+    }
+}
+
+.footer {
+    padding: rem(80) 0;
+    background-color: $color-footer;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copyright {
+        font-size: rem(12);
+        color: #ffffff;
+        text-align: center;
+    }
+}
+
+
+.vision {
+    margin-bottom: rem(124);
+    text-align: center;
+
+    &__image img {
+        margin-bottom: rem(80);
+    }
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__title::after {
+        @include after();
+    }
+
+    &__content {
+        word-break: keep-all;
+    }
+
+    &--padding {
+        padding-bottom: rem(48);
+    }
+}
+
+.works {
+    margin-bottom: rem(124);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__title::after {
+        @include after();
+    }
+
+    &__list {
+        display: grid;
+        row-gap: rem(64);
+
+        @include mq() {
+            grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+            column-gap: rem(50);
+        }
+    }
+}
+
+.schedule {
+    margin-bottom: rem(124);
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        @include title();
+    }
+
+    &__title::after {
+        @include after();
+    }
+
+    &__note {
+        @include mq(table) {
+            display: none;
+        }
+    }
+
+    &__scroll {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th {
+            background-color: $color-table;
+            letter-spacing: ls(100);
+        }
+
+        td {
+            color: #404040;
+        }
+
+        th,
+        td {
+            border: 1px solid $color-text;
+            padding: rem(15) rem(60);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+
+    }
+
+
+}
