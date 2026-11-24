@@ -1,1 +1,225 @@
-/*# sourceMappingURL=style.css.map */
+body {
+  color: #244D4D;
+  font-size: 1rem;
+  font-family: "Gill Sans", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.6875;
+  letter-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.gnav__list {
+  display: flex;
+  justify-content: space-between;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
+}
+
+.post {
+  container-type: inline-size;
+}
+.post__inner {
+  display: grid;
+  gap: 1.25rem;
+}
+@container (width >=400px) {
+  .post__inner {
+    grid-template-columns: 200fr 250fr;
+  }
+}
+.post__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 1.5625rem;
+}
+
+.card {
+  background-color: #F4F4F4;
+  padding: 2.8125rem;
+  width: 18.75rem;
+  text-align: center;
+  position: relative;
+}
+.card__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 0.9375rem;
+}
+.card__price {
+  padding-bottom: 1.875rem;
+}
+.card__icon {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+}
+
+.btn {
+  display: block;
+  width: 10.3125rem;
+  padding: 1.0625rem 2.75rem;
+  background-color: #F4F4F4;
+  border-radius: 0.625rem;
+  margin: 0 auto;
+}
+
+.icon {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: grid;
+  row-gap: 1.5625rem;
+  text-align: center;
+  align-items: center;
+}
+
+.header {
+  padding: 2.5rem 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.header__inner {
+  max-width: 1000px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__title {
+  font-size: 1.625rem;
+  font-weight: bold;
+}
+
+.footer {
+  padding: 5rem 0;
+  background-color: #244D4D;
+  color: #ffffff;
+  text-align: center;
+}
+.footer__inner {
+  max-width: 1000px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer__logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 1.5625rem;
+}
+.footer__copyright {
+  font-size: 0.75rem;
+  line-height: 2.25;
+}
+
+.hero {
+  padding: 15.625rem 0 8.75rem;
+  background: url(../images/bg_hero.png) no-repeat center center;
+  background-size: cover;
+  margin-bottom: 7.5rem;
+}
+.hero__inner {
+  max-width: 1000px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero__title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 1.5625rem;
+}
+.hero__content {
+  width: 30rem;
+  padding: 4.0625rem 3.75rem;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.about {
+  margin-bottom: 7.5rem;
+}
+.about__inner {
+  max-width: 1000px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  gap: 3.125rem 6%;
+  padding-bottom: 3.75rem;
+}
+.about__title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 1.5625rem;
+  text-align: center;
+}
+.about__content {
+  padding-bottom: 3.125rem;
+  text-align: center;
+}
+
+.products {
+  margin-bottom: 7.5rem;
+  text-align: center;
+}
+.products__inner {
+  max-width: 1000px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.products__title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 1.5625rem;
+}
+.products__filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-column-gap: 1.875rem;
+       column-gap: 1.875rem;
+  margin-bottom: 2.1875rem;
+}
+.products__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  row-gap: 2.1875rem;
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.info {
+  margin-bottom: 7.5rem;
+  text-align: center;
+}
+.info__inner {
+  max-width: 1000px;
+  width: 86%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.info__title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2083333333;
+  padding-bottom: 1.5625rem;
+  padding-bottom: 3.125rem;
+}/*# sourceMappingURL=style.css.map */
